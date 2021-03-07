@@ -2,7 +2,7 @@ My first game in Godot.
 
 Referring to GDQuest Tutorials.
 
-# Chapter 1 : Creating the player scene
+## Chapter 1 : Creating the player scene
 
 We need to create a `Player` node which will be a `KinematicBody2D` so that it can be controlled (moved around the world) and can detect collisions.
 
@@ -28,3 +28,16 @@ At this point we need to save our player scene.
 
 `Ctrl + S > Add New Folder 'Actors' > save your player`
 
+
+## Chapter 2: Setting up the Player scripts
+
+Now, we will write some script for the player.
+
+
+Create a script `res://src/Actors/Player.gd`
+
+1. Select Player node from Scene panel.
+2. Click attach node script icon.
+3. Configure your settings.
+
+Create another script `res://src/Actors/Actor.gd` which will define base class `Actor` for both the player and enemies. `Actor` inherits `KinematicBody2D`. Then define `_physics_process()` function to modify velocity.
