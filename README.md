@@ -72,4 +72,33 @@ At this point your godot should look like this:
 
 ![chapter3end](./img/chapter3end.png "Added Floor")
 
-## Chapter 4: 
+## Chapter 4: Setting Physics Layer
+
+`Menu bar > Project > Project Settings > Layer Names (in Left Panel) > 2d Physics > Name your physics layer`
+
+Set the following:
+
+* Layer 1 -- player
+* Layer 2 -- enemies
+* Layer 3 -- coins
+* Layer 4 -- world
+
+Now we need to set the `collision_layer` and collision `collision_mask` for the various scenes. Please follow this link for getting the detail description of them: 
+
+https://godotengine.org/qa/4010/whats-difference-between-collision-layers-collision-masks
+
+
+`TileMap > Inspector > Collision > Layer > select world`
+`TileMap > Inspector > Collision > Mask > deselect all`
+
+Basically this means that `TileMap` will reside in world layer and it won't scan for any collisions.
+
+Similarly for player:
+
+`Player.tscn > Inspector > PhysicsBody2D > Collision > Layer > select player`
+
+`Player.tscn > Inspector > PhysicsBody2D > Collision > Mask > select world`
+
+This means that any instance of `Player` by default will reside in player layer and it will scan for any collisions with any object in world layer.
+
+## Chapter 5: Coding the input
