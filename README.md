@@ -1,4 +1,4 @@
-My first game in Godot.
+# My first game in Godot
 
 Referring to GDQuest Tutorials.
 
@@ -41,3 +41,35 @@ Create a script `res://src/Actors/Player.gd`
 3. Configure your settings.
 
 Create another script `res://src/Actors/Actor.gd` which will define base class `Actor` for both the player and enemies. `Actor` inherits `KinematicBody2D`. Then define `_physics_process()` function to modify velocity.
+
+## Chapter 3: Adding floor
+
+Let's create our template level.
+
+`Scene > New Scene > 2D Scene`
+
+Add a TileMap.
+
+> Ctrl + A : Add child node.
+
+`Ctrl + A > TileMap`
+
+Create a new tile map. A tile map needs a tile map resource (Tile Set). 
+
+`Select TileMap > Inspector > Tile Set > New Tile Set`
+
+Load an image asset in tile editor and chop it to create tiles.
+
+1. `New Single Tile > Select Snap options`
+2. `Inspector > Snap Options > Set Step to (80 x 80)`
+3. Select a region in tile editor.
+4. Add collision property: `Collision > Select rect icon`
+5. Now click and drag tiles in `LevelTemplate` scene to create walls.
+6. Make sure that cell size match tile set. `Select TileMap > Inspector > Cell > Set Size to (80 x 80)`
+7. Drag player as child of `LevelTemplate` and play.
+
+At this point your godot should look like this:
+
+![chapter3end](./img/chapter3end.png "Added Floor")
+
+## Chapter 4: 

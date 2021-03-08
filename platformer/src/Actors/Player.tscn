@@ -7,7 +7,6 @@
 extents = Vector2( 40, 39 )
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 109, 147 )
 script = ExtResource( 2 )
 gravity = 500.0
 
