@@ -102,3 +102,25 @@ Similarly for player:
 This means that any instance of `Player` by default will reside in player layer and it will scan for any collisions with any object in world layer.
 
 ## Chapter 5: Coding the input
+
+To set up the movement keys to control the player:
+
+`Project > Project Settings > Input Map`
+
+Set the following keymaps:
+
+* move_left -- A
+* move_right -- D
+* jump -- W
+
+Add the movement code to `Player.gd` script.
+
+This code will contain the following:
+
+* handling move_left, move_right and jump
+* jump only when on floor 
+* implementing interrupt jump like mario
+
+Here is a demo:
+
+![coding the input](./img/chapter5demo.gif "coding the input")
