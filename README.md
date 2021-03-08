@@ -124,3 +124,5 @@ This code will contain the following:
 Here is a demo:
 
 ![coding the input](./img/chapter5demo.gif "coding the input")
+
+![interrupting jump](./img/chapter5interruptingjump.gif "interrupting jump")
