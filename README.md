@@ -126,3 +126,23 @@ Here is a demo:
 ![coding the input](./img/chapter5demo.gif "coding the input")
 
 ![interrupting jump](./img/chapter5interruptingjump.gif "interrupting jump")
+
+> A private variable in GDScript starts with underscore character.
+
+## Chapter 6: Creating Enemies
+
+Duplicate `res://src/Actors/Player.tscn` to create an `res://src/Actors/Enemy.tscn`.
+
+Rename the scene and sprite name while selecting `Enemy.tscn` and then replace the sprite of the enemy node. 
+
+`Select Enemy Scene > Right Click > Extend Script > Inherit from Actor.gd`
+
+Change `collision_layer` to `enemies` layer and `collision_mask` to `player` and `world`.
+
+Add code for changing the direction when hit wall. At this point you will have a demo like this:
+
+![enemy collision](./img/chapter6enemycollisiondemo.gif "enemy collision")
+
+
+## Chapter 7: Optimizing with VisibilityEnabler2D
+

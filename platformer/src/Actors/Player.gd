@@ -28,7 +28,7 @@ func calculate_move_velocity(
 
 func _physics_process(delta: float) -> void:
 	# determine the direction of player it is moving
-	var is_jump_interrupted := Input.is_action_just_released("jump") and velocity.y < 0.0
+	var is_jump_interrupted := Input.is_action_just_released("jump") and _velocity.y < 0.0
 	var direction := get_direction()
-	velocity = calculate_move_velocity(velocity, direction, speed, is_jump_interrupted)
-	velocity = move_and_slide(velocity, FLOOR_NORMAL)
+	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
