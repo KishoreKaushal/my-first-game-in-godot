@@ -146,3 +146,18 @@ Add code for changing the direction when hit wall. At this point you will have a
 
 ## Chapter 7: Optimizing with VisibilityEnabler2D
 
+First optimization is to stop processing physics when enemy is out of view. To do this add `VisibilityEnabler2D` child node to `Enemy` node and enable `process_parent` and `physics_process_parent` for this node. This will stop the `_physics_process()` when enemy go out of the view, but we also need to stop the `_physics_process()` when the enemy is out of the scene when the game starts. This can be done within the code by adding `set_physics_process(false)` in `_ready()` for enemy.
+
+Also, you need to adjust the size of the `VisibilityEnabler2D` node.
+
+![visibility enabler rect size](./img/chapter7visibilityenablernodesize.png "visibility enabler rect size")
+
+> Ctrl + Shift + O : open a scene
+
+Now we need to add `Camera2D` to test visibility enabler in action.
+
+`Player > Add Camera2D child node > Check the current property for Camera2D node`
+
+Here is the demo at this step.
+
+![visibility camera](./img/chapter7visibilitycamerademo.gif "visibility camera")
