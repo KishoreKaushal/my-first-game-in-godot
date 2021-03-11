@@ -161,3 +161,28 @@ Now we need to add `Camera2D` to test visibility enabler in action.
 Here is the demo at this step.
 
 ![visibility camera](./img/chapter7visibilitycamerademo.gif "visibility camera")
+
+## Chapter 8: Stomping the Enemy
+
+Adding a new `Area2D` node above enemy to detect the stomp. Call it `StompDetector`. Turn off the `monitorable` property for this node and de-select all `collision_layer` as we don't want it to be in any layer. Now add a child node `CollisionShape2D` and select rectangle shape. Size the shape appropriately. Change the color of `StompDetector` or `CollisionShape2D` so it can be distinguished easily.
+
+`StompDetector > Inspector > CanvasItem > Visibility > Modulate`
+
+This color will be visible if `Debug > Visible Collision Shape` is checked.
+
+![stomp collision area](./img/chapter8stompcollisionshape.png "stomp collision area")
+
+Now we need to add signals so that when a player enter the stomp detector regeion we react to that. You can click on the `Node` panel on the right hand side of the godot UI to see the list of signals emitted for any particular node.
+
+![signals emitted for stomp detector node](./img/chapter8signalsemittedforstompdetectornode.png "signals emitted for stomp detector node")
+
+We will use `body_entered` signal which detects the entry of `PhysicalBody2D`. Double click on that signal and a window will appear which will allow us to connect that signal to a method for the `Enemy` node.
+
+![connect signal to method](./img/chapter8connectingsignaltoamethod.png "connect signal to method")
+
+Noow we need to complete the `func _on_StompDetector_body_entered(body: Node) -> void:` to make the enemy die. 
+
+Here is the demo:
+
+![killing enemy](./img/chapter8stompingandkillingenemy.gif "killing enemy")
+
