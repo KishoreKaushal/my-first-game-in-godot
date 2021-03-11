@@ -164,7 +164,7 @@ Here is the demo at this step.
 
 ## Chapter 8: Stomping the Enemy
 
-Adding a new `Area2D` node above enemy to detect the stomp. Call it `StompDetector`. Turn off the `monitorable` property for this node and de-select all `collision_layer` as we don't want it to be in any layer. Now add a child node `CollisionShape2D` and select rectangle shape. Size the shape appropriately. Change the color of `StompDetector` or `CollisionShape2D` so it can be distinguished easily.
+Adding a new `Area2D` node above enemy to detect the stomp. Call it `StompDetector`. Select the enemies `collision_layer`. Now add a child node `CollisionShape2D` and select rectangle shape. Size the shape appropriately. Change the color of `StompDetector` or `CollisionShape2D` so it can be distinguished easily.
 
 `StompDetector > Inspector > CanvasItem > Visibility > Modulate`
 
@@ -186,3 +186,8 @@ Here is the demo:
 
 ![killing enemy](./img/chapter8stompingandkillingenemy.gif "killing enemy")
 
+Now we need to add the stomping related code for the player node. Similar to `StompDetector` node for the enemy add one `EnemyDetector` for player. Select enemies layer for `collision_mask`. And connect a method to signal `area_entered` and add logic for stomp pulse. 
+
+Here is the demo:
+
+![stomp impulse](./img/chapter8stompimpulse.gif "stomp impulse")
