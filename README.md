@@ -196,7 +196,7 @@ Here is the demo:
 
 Defining `body_entered` signal for `EnemyDetector`. here is the demo:
 
-![death](./img/chapter8death.gif "death")
+![death](./img/chapter9death.gif "death")
 
 ![stomping enemy](./img/chapter9stompingenemy.gif "stomping enemy")
 
