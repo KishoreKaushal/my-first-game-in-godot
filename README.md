@@ -191,3 +191,15 @@ Now we need to add the stomping related code for the player node. Similar to `St
 Here is the demo:
 
 ![stomp impulse](./img/chapter8stompimpulse.gif "stomp impulse")
+
+## Chapter 9: Player's Death
+
+Defining `body_entered` signal for `EnemyDetector`. here is the demo:
+
+![death](./img/chapter8death.gif "death")
+
+![stomping enemy](./img/chapter9stompingenemy.gif "stomping enemy")
+
+> Important: You have to adjust the size of EnemyDetector margin and StompDetector size to get correct working code. Shown below is a demo where a non-appropriate size of the StompDetector will screw up the stomp function. 
+
+![buggy stomp](./img/chapter9buggystomp.gif "buggy stomp")

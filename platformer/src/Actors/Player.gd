@@ -14,6 +14,9 @@ func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 	pass # Replace with function body.
 
+func _on_EnemyDetector_body_entered(body: Node) -> void:
+	queue_free()
+
 func get_direction() -> Vector2:
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
