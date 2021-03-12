@@ -216,4 +216,7 @@ Set the `limit_left` and `limit_top` property to `0`. This will limit the camera
 
 Now set the `drag_margin_left` and `drag_margin_right` to `0`. As `drag_margin` specifies the margin to drag the camera and we want our camera to be centered around the player along the horzontal axis. Also, enable `drag_margin_h_enabled` and `drag_margin_v_enabled` property, otherwise `drag_margin` properties wouldn't do anything.
 
-To move camera smoothly enable the `smoothing_enabled` option. 
+To move camera smoothly enable the `smoothing_enabled` option.
+
+## Chapter 11: Creating a mini level and adding background
+

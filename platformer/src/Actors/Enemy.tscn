@@ -4,10 +4,10 @@
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35, 20 )
+extents = Vector2( 32, 20 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 37, 9 )
+extents = Vector2( 37, 11 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -35,6 +35,6 @@ position = Vector2( 0, -46 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( -1, -7 )
+position = Vector2( 0, -5 )
 shape = SubResource( 2 )
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
