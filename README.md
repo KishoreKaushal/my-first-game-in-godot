@@ -22,17 +22,15 @@ Then, we need to add sprite (gamedev terminology for bitmap image) to `Player` n
 
 Turn on pixel snap and center the sprite on the origin and resize the hitbox shape appropriately.
 
-At this point we need to save our player scene. 
+At this point we need to save our player scene.
 
 > Ctrl + S : save
 
 `Ctrl + S > Add New Folder 'Actors' > save your player`
 
-
 ## Chapter 2: Setting up the Player scripts
 
 Now, we will write some script for the player.
-
 
 Create a script `res://src/Actors/Player.gd`
 
@@ -220,3 +218,10 @@ To move camera smoothly enable the `smoothing_enabled` option.
 
 ## Chapter 11: Creating a mini level and adding background
 
+Add a background by draging `res://assests/background.png` holding Alt key and select `TextureRect` type.
+
+Finally add a `CanvasLayer` and move it to make top child of the `LevelTemplate`. Make the `background` to be a child of `CanvasLayer`.
+
+Here is the demo:
+
+![Mini Level](./img/chapter11minilevelwithcanvasdemo.gif "Mini Level")
