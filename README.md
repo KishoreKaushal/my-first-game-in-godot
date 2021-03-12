@@ -203,3 +203,17 @@ Defining `body_entered` signal for `EnemyDetector`. here is the demo:
 > Important: You have to adjust the size of EnemyDetector margin and StompDetector size to get correct working code. Shown below is a demo where a non-appropriate size of the StompDetector will screw up the stomp function. 
 
 ![buggy stomp](./img/chapter9buggystomp.gif "buggy stomp")
+
+## Chapter 10: Improving the camera
+
+First make the `LevelTemplate` bigger.
+
+![big level](./img/chapter10lvltemplatebigger.png "big level")
+
+Now we need to change `Camera2D` properties in the `Player` scene.
+
+Set the `limit_left` and `limit_top` property to `0`. This will limit the camera's `x` and `y` coordinate. Hence, camera area can't go in an area where `x < 0` or `y < 0`. Also, turn on the `limit_smoothed` property. This will smoothen the camera movement. 
+
+Now set the `drag_margin_left` and `drag_margin_right` to `0`. As `drag_margin` specifies the margin to drag the camera and we want our camera to be centered around the player along the horzontal axis. Also, enable `drag_margin_h_enabled` and `drag_margin_v_enabled` property, otherwise `drag_margin` properties wouldn't do anything.
+
+To move camera smoothly enable the `smoothing_enabled` option. 
