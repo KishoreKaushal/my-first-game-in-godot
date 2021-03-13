@@ -64,7 +64,6 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 42, 0, 0, 43, 0, 0, 65536, 0, 0, 655
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 249, 522 )
 speed = Vector2( 900, 1600 )
-gravity = 8000.0
 
 [node name="Camera2D" parent="Player" index="2"]
 limit_right = 3500
@@ -89,6 +88,6 @@ position = Vector2( 835, 507 )
 position = Vector2( 919, 507 )
 
 [node name="Portal2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 541, 631 )
+position = Vector2( 3267, 631 )
 
 [editable path="Player"]

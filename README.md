@@ -309,4 +309,9 @@ Then create a new level to test the teleport.
 
 ![teleport](./img/chapter15startanimationforportal.png "teleport")
 
+Now all that left is to design level 1 of the game.
+
+> Distraction free mode : Ctrl + Shift + F11
+> Select complex tiles : Ctrl + B
+
 At this point we are going to have another mini release.
