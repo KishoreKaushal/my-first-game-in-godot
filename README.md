@@ -141,7 +141,6 @@ Add code for changing the direction when hit wall. At this point you will have a
 
 ![enemy collision](./img/chapter6enemycollisiondemo.gif "enemy collision")
 
-
 ## Chapter 7: Optimizing with VisibilityEnabler2D
 
 First optimization is to stop processing physics when enemy is out of view. To do this add `VisibilityEnabler2D` child node to `Enemy` node and enable `process_parent` and `physics_process_parent` for this node. This will stop the `_physics_process()` when enemy go out of the view, but we also need to stop the `_physics_process()` when the enemy is out of the scene when the game starts. This can be done within the code by adding `set_physics_process(false)` in `_ready()` for enemy.
@@ -184,7 +183,7 @@ Here is the demo:
 
 ![killing enemy](./img/chapter8stompingandkillingenemy.gif "killing enemy")
 
-Now we need to add the stomping related code for the player node. Similar to `StompDetector` node for the enemy add one `EnemyDetector` for player. Select enemies layer for `collision_mask`. And connect a method to signal `area_entered` and add logic for stomp pulse. 
+Now we need to add the stomping related code for the player node. Similar to `StompDetector` node for the enemy add one `EnemyDetector` for player. Select enemies layer for `collision_mask`. And connect a method to signal `area_entered` and add logic for stomp pulse.
 
 Here is the demo:
 
@@ -210,7 +209,7 @@ First make the `LevelTemplate` bigger.
 
 Now we need to change `Camera2D` properties in the `Player` scene.
 
-Set the `limit_left` and `limit_top` property to `0`. This will limit the camera's `x` and `y` coordinate. Hence, camera area can't go in an area where `x < 0` or `y < 0`. Also, turn on the `limit_smoothed` property. This will smoothen the camera movement. 
+Set the `limit_left` and `limit_top` property to `0`. This will limit the camera's `x` and `y` coordinate. Hence, camera area can't go in an area where `x < 0` or `y < 0`. Also, turn on the `limit_smoothed` property. This will smoothen the camera movement.
 
 Now set the `drag_margin_left` and `drag_margin_right` to `0`. As `drag_margin` specifies the margin to drag the camera and we want our camera to be centered around the player along the horzontal axis. Also, enable `drag_margin_h_enabled` and `drag_margin_v_enabled` property, otherwise `drag_margin` properties wouldn't do anything.
 
@@ -258,7 +257,7 @@ Enable autoplay on load for bouncing animation.
 
 ## Chapter 14: Coding the coin
 
-Creat the code: `res://`
+Creat the code: `res://src/Objects/Coin.gd`
 
 Store the reference of animation player that we can use with `onready var`.
 
@@ -273,3 +272,19 @@ Set the `collision_layer` to `coins` and `collision_mask` to `player`. Then, con
 Now add a few coins to the level and test it.
 
 ![coins demo](./img/chapter14coins.gif "coins demo")
+
+## Chapter 15: Creating a portal
+
+As usual to create an interactive node we need to add: 1.) `Area2D` and 2.) `CollisionShape2D`. Let's create a `Portal2D` using `Area2D` node. Drop the sprite and add a collision shape with capsule shape.
+
+Next step is to add node to transition our screen to black (when the portal is taken). Add a `CanvasLayer2D`, name it `TransitionLayer` and set its layer property to 100 to make sure our tansition effect is above everything in the game. Add a `ColorRect` child node to `TransitionLayer` to fill the screen with black color. And change its layout to `Full Rect` and change its color to black and set it to be trasparent in the beginning of the game, then we will animate the transparency while transitioning.
+
+Add an `AnimationPlayer` node to the `Portal2D` node and add a default animation called `START` and enable autoplay on load option for this animation. The purpose of this animation is just to make the color rectangle transparent in the beginning and turn off the visibility. This will let us to perform lazy rendering of the portal transition scene only when it is required in future, which will improve performance for the low end devices. And make the animation `0 seconds` long.
+
+> Note: Even if you set the `ColorRect` to be transparent in the beginning but not make it invisible, the graphic card has to render each pixels. Hence, it is wise to turn off visibility if the scene is not required.
+
+![START animation for portal](./img/chapter15startanimationforportal.png "START animation for portal")
+
+Now create a duplicate animation and name it `fade_in`. This animation will set the node to be visible. Set the length of animation 1s and insert another color key frame at the end side to be non-transparent.
+
+Save it: `res://src/Objects/Portal2D.tscn`
