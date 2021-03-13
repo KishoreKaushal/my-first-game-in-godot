@@ -232,3 +232,23 @@ In godot, to make an interactive body you have 2 choices in general, either it c
 
 Create a new `Area2D` scene name it `Coin`, and add the sprite. Now add a `CollisionShape2D` to detect collisions and add a `AnimationPlayer` node. Save it in the location `res://src/Objects/Coin.tscn`.
 
+## Chapter 13: Create coin animation
+
+`Botton Panel > Animation > create a bouncing animation`
+
+Set the animation time for 1.2 and turn on the animation looping and on the top bar uncheck the rotation mask for inserting keys.
+
+![Animation Options](./img/chapter13creatingcoinanimation.png "Animation Options")
+
+Create two keys with coin at y=10 and y=-10. And set some easing effect to get a non-linear feel. Here is the demo:
+
+![Bounce animation](./img/chapter13bounceanimation.gif "Bounce animation")
+
+Create a new animation and name it `fade_out`. To fadeout we need to animate the modulate property of the coin. To get a key frame click the key icon next to the modulate property.
+
+Also add a modulate property to the bouncing animation, because animations change the global property, and when we plat the fadeout animation it may affect the visibility of coin in bouncing animation therefore adding a constant modulate property in bouncing animation makes sure that it's value is reassigned.
+
+Then add a function callback (`fade_out > Add Track > Call Method Track`) to delete the coin node once the fading animation is over.
+
+![fadeout callback](./img/chapter13fadeoutcallback.png "fadeout callback")
+
