@@ -225,3 +225,10 @@ Finally add a `CanvasLayer` and move it to make top child of the `LevelTemplate`
 Here is the demo:
 
 ![Mini Level](./img/chapter11minilevelwithcanvasdemo.gif "Mini Level")
+
+## Chapter 12: Creating coin scene
+
+In godot, to make an interactive body you have 2 choices in general, either it can be a body or an area.
+
+Create a new `Area2D` scene name it `Coin`, and add the sprite. Now add a `CollisionShape2D` to detect collisions and add a `AnimationPlayer` node. Save it in the location `res://src/Objects/Coin.tscn`.
+
