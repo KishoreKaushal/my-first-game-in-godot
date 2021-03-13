@@ -252,3 +252,24 @@ Then add a function callback (`fade_out > Add Track > Call Method Track`) to del
 
 ![fadeout callback](./img/chapter13fadeoutcallback.png "fadeout callback")
 
+Enable autoplay on load for bouncing animation.
+
+![autoplay on load](./img/chapter13enablebouncingautoplayonload.png "autoplay on load")
+
+## Chapter 14: Coding the coin
+
+Creat the code: `res://`
+
+Store the reference of animation player that we can use with `onready var`.
+
+`onready var anim_player : AnimationPlayer = get_node("AnimationPlayer")`
+
+Set the `collision_layer` to `coins` and `collision_mask` to `player`. Then, connect the `body_entered` signal.
+
+**BUG:** Instead of animating the coin, we need to animate the sprite. To do that simply edit the `.:position` name to `coin:position` where left of `:` is the node name and right of `:` is property. This will animate the sprite without moving the collision shape.
+
+![bounce only sprite](./img/chapter14bounceonlysprite.gif "bounce only sprite")
+
+Now add a few coins to the level and test it.
+
+![coins demo](./img/chapter14coins.gif "coins demo")
