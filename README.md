@@ -288,3 +288,25 @@ Add an `AnimationPlayer` node to the `Portal2D` node and add a default animation
 Now create a duplicate animation and name it `fade_in`. This animation will set the node to be visible. Set the length of animation 1s and insert another color key frame at the end side to be non-transparent.
 
 Save it: `res://src/Objects/Portal2D.tscn`
+
+## Chapter 16: Coding the teleportation
+
+Turn off all the bits in `collision_layer` and `collision_mask` to player bit and make the portal non-monitorable.
+
+Add code for teleportation so that when any player touches it, they can teleport.
+Add an exported variable `next_scene : PackedScene` which will store the next scene data.
+Also define the function `_get_configuration_warning()` to get a warning if `next_scene` is empty or not initialized.
+
+Also add an `onready var anim_player : AnimationPlayer` which stores the reference of animation player node for the portal. This can be done in 2 way:
+
+1. `onready var anim_player : AnimationPlayer = get_node("AnimationPlayer")`
+2. `onready var anim_player : AnimationPlayer = $AnimationPlayer`
+
+Both are same.
+Now define a `teleport()` function which whill change the scenes.
+Now we need to detect when the player enters the portal then call the `teleport()` function.
+Then create a new level to test the teleport.
+
+![teleport](./img/chapter15startanimationforportal.png "teleport")
+
+At this point we are going to have another mini release.

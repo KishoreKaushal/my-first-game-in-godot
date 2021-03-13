@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/portal.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/Portal2D.gd" type="Script" id=2]
+[ext_resource path="res://src/Levels/EndLevelTemplate.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 71.0
@@ -62,6 +64,10 @@ tracks/1/keys = {
 }
 
 [node name="Portal2D" type="Area2D"]
+monitorable = false
+collision_layer = 0
+script = ExtResource( 2 )
+next_scene = ExtResource( 3 )
 
 [node name="portal" type="Sprite" parent="."]
 position = Vector2( 0, -123 )
@@ -75,9 +81,10 @@ shape = SubResource( 1 )
 layer = 100
 
 [node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -86,3 +93,4 @@ __meta__ = {
 autoplay = "START"
 anims/START = SubResource( 2 )
 anims/fade_in = SubResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
