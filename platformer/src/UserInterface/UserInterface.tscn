@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/firasans_default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UserInterface/RetryButton.tscn" type="PackedScene" id=5]
+
+[node name="UserInterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -138.0
+margin_top = 34.0
+margin_right = -35.0
+margin_bottom = 64.0
+text = "Score: %s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="PauseOverlay" instance=ExtResource( 2 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -178.0
+margin_bottom = -148.0
+text = "Paused"
+
+[node name="PauseMenu" type="VBoxContainer" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.0
+margin_top = -113.0
+margin_right = 108.0
+margin_bottom = 113.0
+
+[node name="RetryButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 5 )]
+margin_right = 216.0
+margin_bottom = 72.0
+
+[node name="ChangeSceneButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 3 )]
+margin_top = 76.0
+margin_right = 216.0
+margin_bottom = 149.0
+text = "Main Screen"
+next_scene_path = "res://src/Screens/MainScreen.tscn"
+
+[node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 4 )]
+margin_top = 153.0
+margin_right = 216.0
+margin_bottom = 226.0

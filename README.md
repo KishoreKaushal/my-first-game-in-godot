@@ -374,3 +374,13 @@ Register the `PlayerData` scene to autoload in project settings.
 
 `Project Settings > AutoLoad Tab > Add scene`
 
+
+## Chapter 21: Pause Menu
+
+Create a new `UserInterface` node and save it as `res://src/UserInterface/UserInterface.tscn`.
+Add a `Label` and name it `ScoreLabel`. Next step is to create a pause overlay. Add a `ColorRect` that is going to cover the whole scene, name it `PauseOverlay`, set the layout to `FullRect`. Then set the color to transparent black overlay.
+
+Drag the `Title` scene inside the `ColorRect` for pause title. We use a `VBoxContainer` to create the `PauseMenu` which will hold 3 buttons: `QuitButton`, `ChangeSceneButton` and `RetryButton`. The `QuitButton` and `ChangeSceneButton` can be reused from previous chapters while we need to create a `RetryButton`. To create the `RetryButton` just duplicate the `ChangeSceneButton` and detach the old script and add attach a new script.
+
+Implement the `_on_button_up()` function which is already attached to the signal `button_up` for `RetryButton` as it was made by duplication.
+
