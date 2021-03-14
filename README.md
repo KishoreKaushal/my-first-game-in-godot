@@ -353,3 +353,11 @@ This will allow us to set the next scene through the inspector panel.
 Also, add a warning to prompt if next scene path is empty.
 
 Then add the script for the `QuitButton`'s signal `button_up()`.
+
+## Chapter 19: End Scene
+
+`res://src/Screens/EndScene.tscn`
+
+You can take the `TextureRect` scene directly from `MainScreen` by merge from scene option.
+Drag and drop the created UI resource theme.
+Similarly, create a `Label` node for score and a `Title` node.
