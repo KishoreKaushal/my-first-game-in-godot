@@ -340,3 +340,16 @@ There is no specific reason for above, other than a proper code organization.
 Next step is to change the font. Please follow the below link foor an excellent tutorial on font creation for Godot game.
 
 https://youtu.be/mjWwWIEyib8?t=839
+
+## Chapter 18: Coding the buttons
+
+Rename the `PlayButton` to `ChangeSceneButton` at the following location: `res://src/UserInterface/PlayButton.tscn`
+
+Implement the `ChangeSceneButton`'s `button_up()` signal to change the scene. You can export a variable for storing the next scene path like this:
+
+`export(String, FILE) var next_scene_path := ""`
+
+This will allow us to set the next scene through the inspector panel.
+Also, add a warning to prompt if next scene path is empty.
+
+Then add the script for the `QuitButton`'s signal `button_up()`.
