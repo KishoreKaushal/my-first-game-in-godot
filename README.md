@@ -394,3 +394,7 @@ Create a new input map called `pause`.
 
 Once the pause script has been coded, it's time to add this on the level scenes.
 Also, make sure that `UserInterface` scene `Pause` property is set to `process`. This is necessary because when we set scene tree to pause every child node is paused in `Inherit` mode, so no process happens, which will even stop responding to the clicks on pause menu buttons.
+
+Next step is to connect the `score_update` and `player_died` signal defined in `PlayerData.gd` to a function in the `UserInterface` on ready.
+
+> Tip: It's better to put `get_node("some_node")` call in an `onready var` in the beginning of the `.gd` file. This improves readability so that all theh dependencies are written on the top of the file.
