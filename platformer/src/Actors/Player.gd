@@ -14,8 +14,15 @@ func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
 	pass # Replace with function body.
 
-func _on_EnemyDetector_body_entered(body: Node) -> void:
+
+func die() -> void:
+	PlayerData.deaths += 1
 	queue_free()
+
+
+func _on_EnemyDetector_body_entered(body: Node) -> void:
+	die()
+
 
 func get_direction() -> Vector2:
 	return Vector2(

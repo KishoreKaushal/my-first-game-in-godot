@@ -361,3 +361,16 @@ Then add the script for the `QuitButton`'s signal `button_up()`.
 You can take the `TextureRect` scene directly from `MainScreen` by merge from scene option.
 Drag and drop the created UI resource theme.
 Similarly, create a `Label` node for score and a `Title` node.
+
+## Chapter 20: Score and Deaths
+
+Add a system to count the score in a way that it is persistent when we change the scene.
+We use the `AutoLoad` feature that allows us to create a node that is always be accessible.
+
+Create a basic node, call it `PlayerData` and save it as `res://src/Autoload/PlayerData.tscn` and attach a script.
+This node will have a `score` and `deaths` variables.
+
+Register the `PlayerData` scene to autoload in project settings.
+
+`Project Settings > AutoLoad Tab > Add scene`
+

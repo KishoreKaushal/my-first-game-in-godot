@@ -1,5 +1,7 @@
 extends "res://src/Actors/Actor.gd"
 
+export var score := 100
+
 func _ready() -> void:
 	# this will disable _physics_process() function until
 	# the enemy comes in the scene
@@ -7,16 +9,17 @@ func _ready() -> void:
 	_velocity.x = -speed.x
 
 
+func die() -> void:
+	PlayerData.score += score
+	get_node("CollisionShape2D").disabled = true
+	queue_free() 
+
+
 func _on_StompDetector_body_entered(body: Node) -> void:
 	if body.global_position.y > get_node("StompDetector").global_position.y:
 		return # do nothing if player is below stomp area
-	
-	get_node("CollisionShape2D").disabled = true
-	queue_free() 
-	
-	
-	
-	pass # Replace with function body.
+	die()
+
 
 func _physics_process(delta: float) -> void:
 	_velocity.y += gravity * delta
