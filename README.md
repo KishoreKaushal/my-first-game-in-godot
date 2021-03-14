@@ -374,7 +374,6 @@ Register the `PlayerData` scene to autoload in project settings.
 
 `Project Settings > AutoLoad Tab > Add scene`
 
-
 ## Chapter 21: Pause Menu and Score
 
 Create a new `UserInterface` node and save it as `res://src/UserInterface/UserInterface.tscn`.
@@ -398,3 +397,7 @@ Also, make sure that `UserInterface` scene `Pause` property is set to `process`.
 Next step is to connect the `score_update` and `player_died` signal defined in `PlayerData.gd` to a function in the `UserInterface` on ready.
 
 > Tip: It's better to put `get_node("some_node")` call in an `onready var` in the beginning of the `.gd` file. This improves readability so that all theh dependencies are written on the top of the file.
+
+Finally, change the end scene.
+
+Now, its time to release the first version of game with UI.

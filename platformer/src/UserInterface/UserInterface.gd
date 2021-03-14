@@ -20,6 +20,7 @@ func update_interface() -> void:
 
 func _on_PlayerData_player_died() -> void:
 	pause_title.text = "You Died!"
+	self.paused = true
 
 
 func _unhandled_input(event: InputEvent) -> void:
