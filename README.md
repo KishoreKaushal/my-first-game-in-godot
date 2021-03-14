@@ -315,3 +315,28 @@ Now all that left is to design level 1 of the game.
 > Select complex tiles : Ctrl + B
 
 At this point we are going to have another mini release.
+
+## Chapter 17: Designing the title screen
+
+> Important: Designing in godot is similar to designing in HTML/CSS. Relative designing is done by Layout option for UI elements.
+
+In godot all of the user interface related nodes have green icons.
+
+Add a new `User Interface` node, and name it `MainScreen`.
+
+Drag and drop `background.png` on the `MainScreen` scene holding the `Alt` button to change the type to `TextureRect`. Then adjust the layout to `Full Rect`, this will move and resize the background tecture so that it fits the full rectangle of its parent. Then enable `expand` property and change the `stretch_mode` to the `Tile`.
+Now add a `Label` node for a title box and name it `Title`. With the `Title` box selected change the text, for eg., "my first godot game".
+Add Play and Quit `Button` nodes. Add these 2 buttons to a `VBoxContainer` (named as `Menu`) which is centered on the `MainScreen`.
+
+Save the following scenes as separate scenes.
+
+1. `PlayButton` -- `res://src/UserInterface/PlayButton.tscn`
+2. `QuitButton` -- `res://src/UserInterface/QuitButton.tscn`
+3. `Title` -- `res://src/UserInterface/Title.tscn`
+4. `MainScreen` -- `res://src/Screens/MainScreen.tscn`
+
+There is no specific reason for above, other than a proper code organization.
+
+Next step is to change the font. Please follow the below link foor an excellent tutorial on font creation for Godot game.
+
+https://youtu.be/mjWwWIEyib8?t=839
