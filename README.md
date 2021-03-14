@@ -375,7 +375,7 @@ Register the `PlayerData` scene to autoload in project settings.
 `Project Settings > AutoLoad Tab > Add scene`
 
 
-## Chapter 21: Pause Menu
+## Chapter 21: Pause Menu and Score
 
 Create a new `UserInterface` node and save it as `res://src/UserInterface/UserInterface.tscn`.
 Add a `Label` and name it `ScoreLabel`. Next step is to create a pause overlay. Add a `ColorRect` that is going to cover the whole scene, name it `PauseOverlay`, set the layout to `FullRect`. Then set the color to transparent black overlay.
@@ -384,3 +384,13 @@ Drag the `Title` scene inside the `ColorRect` for pause title. We use a `VBoxCon
 
 Implement the `_on_button_up()` function which is already attached to the signal `button_up` for `RetryButton` as it was made by duplication.
 
+Create a new input map called `pause`.
+
+> GDScript Tips:
+> Within a script to call a setter functions there are 2 ways:
+>
+> 1. directly call setter function
+> 2. use self.var_name
+
+Once the pause script has been coded, it's time to add this on the level scenes.
+Also, make sure that `UserInterface` scene `Pause` property is set to `process`. This is necessary because when we set scene tree to pause every child node is paused in `Inherit` mode, so no process happens, which will even stop responding to the clicks on pause menu buttons.
