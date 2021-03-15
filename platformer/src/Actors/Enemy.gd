@@ -2,6 +2,11 @@ extends "res://src/Actors/Actor.gd"
 
 export var score := 100
 
+onready var audio_player : AudioStreamPlayer = get_node("AudioStreamPlayer")
+onready var collision_shape_2D : CollisionShape2D = get_node("CollisionShape2D")
+onready var timer : Timer = get_node("Timer")
+
+
 func _ready() -> void:
 	# this will disable _physics_process() function until
 	# the enemy comes in the scene
@@ -10,8 +15,15 @@ func _ready() -> void:
 
 
 func die() -> void:
+	audio_player.play()
 	PlayerData.score += score
 	get_node("CollisionShape2D").disabled = true
+	collision_shape_2D.set_deferred("disabled", true)
+	timer.wait_time = 0.3
+	timer.start()
+
+
+func _on_Timer_timeout() -> void:
 	queue_free() 
 
 
