@@ -401,3 +401,13 @@ Next step is to connect the `score_update` and `player_died` signal defined in `
 Finally, change the end scene.
 
 Now, its time to release the first version of game with UI.
+
+## Chapter 22: Adding Sound Tracks
+
+As an example let's add coin pickup sound.
+
+To add coin pickup sound track add a child node `AudioStreamPlayer`. Then simply add a new `Audio Playback Track` in the animation `fade_out` and reference to `AudioStreamPlayer` node. Then simply load the `coin_sound.wav` soundtrack in the `AudioStreamPlayer` and add a key frame of `playing` property in the animation track.
+
+![sound track](./img/Chapter22addingsoundtrack.png "sound track")
+
+Similarly, add sound tracks for enemy death, player walk, jump and take portal.
